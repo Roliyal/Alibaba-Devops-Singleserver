@@ -35,7 +35,7 @@ env:
   ACK_DEPLOYMENT_NAME: nginx-deployment
 
   ACR_EE_REGISTRY: devops-issac-registry.cn-chengdu.cr.aliyuncs.com
-  ACR_EE_INSTANCE_ID: crr-7m5kstg6upjzdooh
+  ACR_EE_INSTANCE_ID: cri-3hbbd9y6axv0ctiy
   ACR_EE_NAMESPACE: devops-issac
   ACR_EE_IMAGE: repo
   ACR_EE_TAG: ${{ github.sha }}
