@@ -37,7 +37,7 @@ env:
   ACR_EE_REGISTRY: devops-issac-registry.cn-chengdu.cr.aliyuncs.com
   ACR_EE_INSTANCE_ID: cri-3hbbd9y6axv0ctiy
   ACR_EE_NAMESPACE: devops-issac
-  ACR_EE_IMAGE: repo
+  ACR_EE_IMAGE: depot
   ACR_EE_TAG: ${{ github.sha }}
 
 jobs:
