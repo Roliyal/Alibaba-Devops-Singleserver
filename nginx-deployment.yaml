@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: nginx-deployment
-        image: nginx:1.14.2
+        image: $REGISTRY/$NAMESPACE/$IMAGE:$TAG
         ports:
         - containerPort: 80
