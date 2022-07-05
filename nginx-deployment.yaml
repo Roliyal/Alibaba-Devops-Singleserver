@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: nginx-deployment
-        image: $REGISTRY/$NAMESPACE/$IMAGE:$TAG
+        image: devops-issac-registry-vpc.cn-chengdu.cr.aliyuncs.com/devops-issac/depot:e2aaf889be3a96de2dd6257b1bca724a8a444ab3
         ports:
         - containerPort: 80
