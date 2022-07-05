@@ -16,6 +16,7 @@
 #
 # 4. Change the values for the REGION_ID, REGISTRY, NAMESPACE, IMAGE, ACK_CLUSTER_ID, and ACK_DEPLOYMENT_NAME. 
 #
+[![Build and Deploy to ACK](https://github.com/Roliyal/Alibaba-Devops-Gather/actions/workflows/alibabacloud.yml/badge.svg?branch=main)](https://github.com/Roliyal/Alibaba-Devops-Gather/actions/workflows/alibabacloud.yml)
 
 name: Build and Deploy to ACK
 
