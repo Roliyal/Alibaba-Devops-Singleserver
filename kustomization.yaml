@@ -4,3 +4,7 @@ kind: Kustomization
 resources:
  # - service.yaml
   - nginx-deployment.yaml
+images:
+- name: REGISTRY
+  newName: foo/bar
+  newTag: 3.4.5
