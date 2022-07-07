@@ -114,5 +114,5 @@ jobs:
         curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash /dev/stdin 3.8.6
     - name: Deploy
       run: |-
-        kubectl set image deployment/$ACK_DEPLOYMENT_NAME $ACK_DEPLOYMENT_NAME=$REGISTRY/$NAMESPACE/$IMAGE:$TAG
+        kubectl set image -n devops-issac deployment/$ACK_DEPLOYMENT_NAME $ACK_DEPLOYMENT_NAME=$REGISTRY/$NAMESPACE/$IMAGE:$TAG
         
