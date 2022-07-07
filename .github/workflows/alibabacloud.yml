@@ -109,4 +109,4 @@ jobs:
         
     - name: Apply new deployment for app-xxx
       run: |-
-        kubectl set image deployment/$ACK_DEPLOYMENT_NAME $ACK_DEPLOYMENT_NAME=$REGISTRY/$NAMESPACE/$ACR_EE_IMAGE:$IMAGE:$TAG
+        kubectl set image deployment/$ACK_DEPLOYMENT_NAME $ACK_DEPLOYMENT_NAME=$REGISTRY/$NAMESPACE/$ACR_EE_IMAGE:$TAG
