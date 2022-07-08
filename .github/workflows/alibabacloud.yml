@@ -7,11 +7,6 @@ on:
 
 # Environment variables available to all jobs and steps in this workflow.
 env:
-  REGION_ID: cn-chengdu
-  REGISTRY: registry.cn-chengdu.aliyuncs.com
-  NAMESPACE: devops-issac
-  IMAGE: repo
-  TAG: ${{ github.sha }}
   ACK_CLUSTER_ID: c93b5880a57794916be1a4df9cf8b31c7
   ACK_DEPLOYMENT_NAME: nginx-deployment
   ACR_EE_REGISTRY: devops-issac-registry.cn-chengdu.cr.aliyuncs.com
