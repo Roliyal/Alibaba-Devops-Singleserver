@@ -72,3 +72,4 @@ jobs:
       run: |-
         ./kustomize edit set image ACR_EE_REGISTRY/ACR_EE_NAMESPACE/ACR_EE_IMAGE:TAG=$ACR_EE_REGISTRY/$ACR_EE_NAMESPACE/$ACR_EE_IMAGE:$TAG
         ./kustomize build . | kubectl apply -f -
+         kubectl set image  -n devops-issac deployment/$ACK_DEPLOYMENT_NAME $ACK_DEPLOYMENT_NAME=$ACR_EE_REGISTRY/$ACR_EE_NAMESPACE/$ACR_EE_IMAGE:$TAG
