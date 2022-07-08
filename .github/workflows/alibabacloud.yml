@@ -72,5 +72,5 @@ jobs:
       run: |-
         ./kustomize edit set image $ACR_EE_REGISTRY/$ACR_EE_NAMESPACE/$ACR_EE_IMAGE:$TAG=$ACR_EE_REGISTRY/$ACR_EE_NAMESPACE/$ACR_EE_IMAGE:$TAG
         ./kustomize build . | kubectl apply -f -
-        kubectl rollout status deployment/$ACK_DEPLOYMENT_NAME
+        kubectl rollout status -n devops-issac deployment/$ACK_DEPLOYMENT_NAME
         kubectl get services -o wide
