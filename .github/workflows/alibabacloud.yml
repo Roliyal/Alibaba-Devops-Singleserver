@@ -107,6 +107,9 @@ jobs:
         access-key-secret: "${{ secrets.ACCESS_KEY_SECRET }}"
         cluster-id: "${{ env.ACK_CLUSTER_ID }}"
         
-    - name: Apply new deployment for app-xxx
+    - name: Deploy
       run: |-
-        kubectl set image deployment/$ACK_DEPLOYMENT_NAME $ACK_DEPLOYMENT_NAME=$REGISTRY/$NAMESPACE/$ACR_EE_IMAGE:$TAG
+        ./kustomize edit set image devops-issac-registry.cn-chengdu.cr.aliyuncs.com/ACR_EE_NAMESPACE/ACR_EE_IMAGE:ACR_EE_TAG=devops-issac-registry.cn-chengdu.cr.aliyuncs.com/$ACR_EE_NAMESPACE/ACR_EE_IMAGE:ACR_EE_TAG
+        ./kustomize build . | kubectl apply -f -
+        kubectl rollout status deployment/$DEPLOYMENT_NAME
+        kubectl get services -o wide
