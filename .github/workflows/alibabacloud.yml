@@ -70,6 +70,6 @@ jobs:
         curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash /dev/stdin 3.8.6
     - name: Deploy
       run: |-
-        ./kustomize edit set image ACR_EE_REGISTRY/ACR_EE_NAMESPACE/ACR_EE_IMAGE:TAG=$ACR_EE_REGISTRY/$ACR_EE_NAMESPACE/$ACR_EE_IMAGE:$TAG
+        # ./kustomize edit set image ACR_EE_REGISTRY/ACR_EE_NAMESPACE/ACR_EE_IMAGE:TAG=$ACR_EE_REGISTRY/$ACR_EE_NAMESPACE/$ACR_EE_IMAGE:$TAG
         ./kustomize build . | kubectl apply -f -
          kubectl set image  -n devops-issac deployment/$ACK_DEPLOYMENT_NAME $ACK_DEPLOYMENT_NAME=$ACR_EE_REGISTRY/$ACR_EE_NAMESPACE/$ACR_EE_IMAGE:$TAG
