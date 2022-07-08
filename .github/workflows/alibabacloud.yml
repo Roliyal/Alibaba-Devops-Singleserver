@@ -106,13 +106,11 @@ jobs:
         access-key-id: "${{ secrets.ACCESS_KEY_ID }}"
         access-key-secret: "${{ secrets.ACCESS_KEY_SECRET }}"
         cluster-id: "${{ env.ACK_CLUSTER_ID }}"
-    # Set up kustomize
+
+    # 3.2 Deploy the image to the ACK cluster
     - name: Set up Kustomize
       run: |-
-        curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
-        chmod u+x ./kustomize
-
-    # Deploy the Docker image to the ACK cluster
+        curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash /dev/stdin 3.8.6
     - name: Deploy
       run: |-
         ./kustomize edit set image ACR_EE_REGISTRY/ACR_EE_NAMESPACE/ACR_EE_IMAGE:ACR_EE_TAG=$ACR_EE_REGISTRY/$ACR_EE_NAMESPACE/ACR_EE_IMAGE:ACR_EE_TAG
