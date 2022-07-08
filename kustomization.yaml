@@ -4,3 +4,7 @@ kind: Kustomization
 resources:
  # - service.yaml
   - nginx-deployment.yaml
+images:
+- name: devops-issac-registry.cn-chengdu.cr.aliyuncs.com/devops-issac/depot
+  newName: devops-issac-registry.cn-chengdu.cr.aliyuncs.com/devops-issac/depot
+  newTag: $TAG
