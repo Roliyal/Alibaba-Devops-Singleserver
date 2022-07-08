@@ -4,7 +4,3 @@ kind: Kustomization
 resources:
  # - service.yaml
   - nginx-deployment.yaml
-images:
-- name: ACR_EE_REGISTRY/ACR_EE_NAMESPACE/ACR_EE_IMAGE:TAG
-  newName: $ACR_EE_REGISTRY/$ACR_EE_NAMESPACE/$ACR_EE_IMAGE
-  newTag: $TAG
