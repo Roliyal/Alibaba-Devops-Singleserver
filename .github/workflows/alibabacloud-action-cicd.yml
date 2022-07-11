@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - 'v*'
 # Environment variables available to all jobs and steps in this workflow.
 env:
   REGION_ID: cn-chengdu
@@ -13,7 +15,7 @@ env:
   ACR_EE_INSTANCE_ID: cri-3hbbd9y6axv0ctiy
   ACR_EE_NAMESPACE: devops-issac
   ACR_EE_IMAGE: depot
-  ACR_EE_TAG: ${{ github.sha }}
+  ACR_EE_TAG: ${{ github.ref }}
 
 jobs:
   build:
