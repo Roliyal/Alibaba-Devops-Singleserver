@@ -71,4 +71,4 @@ jobs:
     - name: View deployment status  
       run: |-
          kubectl rollout status -n $ACR_EE_NAMESPACE deployment/$ACK_DEPLOYMENT_NAME
-         kubectl get -n $ACR_EE_NAMESPACE -services -o wide
+         kubectl get -n $ACR_EE_NAMESPACE services -o wide
