@@ -1,10 +1,9 @@
+#  Easy deployment of nginx to ack
 name: Build and Deploy to ACK
-
 on:
   push:
     branches:
       - main
-
 # Environment variables available to all jobs and steps in this workflow.
 env:
   REGION_ID: cn-chengdu
@@ -25,7 +24,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    # 2.1 (Optional) Login to ACR EE          
+    # 1 Login to ACR EE          
     - uses: actions/checkout@v2
     - name: Login to ACR EE with the AccessKey pair
       uses: aliyun/acr-login@v1
@@ -36,12 +35,12 @@ jobs:
         access-key-secret: "${{ secrets.ACCESS_KEY_SECRET }}"
         instance-id: "${{ env.ACR_EE_INSTANCE_ID }}"
 
-    # 2.2 (Optional) Build and push image ACR EE          
+    # 2 Build and push image ACR EE          
     - name: Build and push image to ACR EE  
       run: |
         docker build -t "$ACR_EE_REGISTRY/$ACR_EE_NAMESPACE/$ACR_EE_IMAGE:$ACR_EE_TAG" .
         docker push "$ACR_EE_REGISTRY/$ACR_EE_NAMESPACE/$ACR_EE_IMAGE:$ACR_EE_TAG"
-    # 2.3 (Optional) Scan image in ACR EE          
+    # 3 Scan image in ACR EE          
     - name: Scan image in ACR EE
       uses: aliyun/acr-scan@v1
       with:
@@ -52,7 +51,7 @@ jobs:
         repository: "${{ env.ACR_EE_NAMESPACE}}/${{ env.ACR_EE_IMAGE }}"
         tag: "${{ env.ACR_EE_TAG }}"
 
-    # 3.1 Set ACK context         
+    # 4 Set ACK context         
     - name: Set K8s context
       uses: aliyun/ack-set-context@v1
       with:
@@ -60,11 +59,11 @@ jobs:
         access-key-secret: "${{ secrets.ACCESS_KEY_SECRET }}"
         cluster-id: "${{ env.ACK_CLUSTER_ID }}"
 
-    # 3.2 Deploy the image to the ACK cluster
+    # 5 Deploy the image to the ACK cluster
     - name: Set up Kustomize
       run: |-
         curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash /dev/stdin 3.8.6
-    - name: Deploy
+    - name: Deploy Deployment
       run: |-
         ./kustomize build . | kubectl apply -f -
          kubectl set image  -n $ACR_EE_NAMESPACE deployment/$ACK_DEPLOYMENT_NAME $ACK_DEPLOYMENT_NAME=$ACR_EE_REGISTRY/$ACR_EE_NAMESPACE/$ACR_EE_IMAGE:$ACR_EE_TAG
