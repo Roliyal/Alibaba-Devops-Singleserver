@@ -1,5 +1,5 @@
 #  Easy deployment of nginx to ack
-name: Build and Deploy to ACK
+name: Easy deployment of nginx to ack
 on:
   push:
     branches:
@@ -21,6 +21,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment: production
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
     
     steps:
     - name: Checkout
