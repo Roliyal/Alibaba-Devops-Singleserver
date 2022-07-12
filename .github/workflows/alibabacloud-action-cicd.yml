@@ -14,7 +14,7 @@ env:
   ACR_EE_INSTANCE_ID: cri-3hbbd9y6axv0ctiy
   ACR_EE_NAMESPACE: devops-issac
   ACR_EE_IMAGE: depot
-  ACR_EE_TAG: ${{ github.ref }}
+  ACR_EE_TAG: ${{ github.sha }}
 
 jobs:
   build:
