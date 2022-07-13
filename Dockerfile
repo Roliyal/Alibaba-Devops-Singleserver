@@ -1,2 +1,2 @@
 FROM nginx:1.23.0
-MAINTAINER issac
+MAINTAINER devops-issac
