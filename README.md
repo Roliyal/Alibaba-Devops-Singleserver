@@ -1,9 +1,4 @@
-# SREWorks
-
-[![GitHub](https://img.shields.io/github/license/alibaba/sreworks)](./LICENSE)
-[![GitHub](https://img.shields.io/github/repo-size/alibaba/sreworks)](#)
-
-English | [中文](README-CN.md)
+#  Devops Easy deployment 
 
 ## Introduction
 
