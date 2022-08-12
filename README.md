@@ -1,7 +1,7 @@
 #  Devops Easy deployment
 
 <h1 align="center">
-    <img src="https://graphscope.io/assets/images/logo.png" width="400" alt="graphscope-logo">
+    <img src="https://user-images.githubusercontent.com/96233798/184319134-758d65b2-0e0b-4127-aab5-06c1adf9c15e.png" width="1000" alt="ack_githubaction">
 </h1>
 <p align="center">
     如何快速在阿里云 ACK 使用 Github Action 进行持续集成与发布（Singler）
@@ -10,7 +10,6 @@
 目前，阿里云与 GitHub 联合发布了快速部署至阿里云 ACK 的 GitHub Action Workflow。无需再自建部署维护 CI/CD 工具，基于开箱即用的 GitHub Action 及阿里云部署模板，即可实现 GitHub 代码变更后，自动应用打包构建上传阿里云容器镜像服务 ACR、快速部署至阿里云容器服务 ACK 的流程。本文将从 GitHub Action、阿里云容器服务及实践 Demo 来为您详细介绍。
 
 欢迎访问我的网站 [roliyal.com](https://roliyal.com) 了解更多信息。
-
 
 
 ## 快速开始
@@ -28,12 +27,12 @@ pip3 install graphscope
 ```
 
 注
-接下来我们会用一个具体的例子，来演示 GraphScope 如何帮助数据科学家高效的分析、处理大规模图数据。
-
-## 示例: 论文引用网络中的节点分类任务
 
 
-### 载图
+## 示例
+
+
+
 
 
 
@@ -88,11 +87,8 @@ make test
 ```
 
 
+
 ## 文档
-
-
-
-## 资料引用参考
 [GitHub Action + ACK：云原生 DevOps 落地利器
 ](https://developer.aliyun.com/article/782743）
 ## 贡献
