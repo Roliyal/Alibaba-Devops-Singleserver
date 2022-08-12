@@ -18,75 +18,19 @@
 
 
 
-### 本地安装
-
-使用 `pip` 安装 GraphScope。
-
-```bash
-pip3 install graphscope
-```
-
-注
+### 配置项
 
 
-## 示例
-
-
-
-
-
-
-
-### 图分析
-
-
-### 关闭会话
-
-
-## 开发
-
-### 在本地构建
-
-
-# 编译所有组件，包括 Python 包和 引擎可执行文件
-make graphscope
-
-# 或者只编译指定的引擎
-# make gie
-# make gae
-# make gle
-```
 
 ### 构建 Docker 镜像
 
-GraphScope 包含一个 [Dockerfile](k8s/graphscope.Dockerfile)，可以构建 Docker 映像。 这些映像会在单独的构建镜像上构建，完成后再复制生成的二进制文件到运行时基础镜像，进行分发。构建镜像和运行时基础镜像都预装了所有所需的第三方依赖和环境。要构建最新的 GraphScope 镜像，在根目录运行此命令。
 
-```bash
-# 默认情况下，产出的镜像 tag 为 graphscope/graphscope:SHORTSHA
-make graphscope-image
-```
+### 
 
-### 构建客户端 Python 包
-
-GraphScope Python 包与 GraphScope docker 镜像是独立构建的。
-如果您正在开发 Python 客户端且未修改 protobuf 文件，则 GraphScope docker 镜像不需要重新构建。您只需要在本地重新安装 Python 客户端。
-
-```bash
-make client
-```
-
-请注意，图学习引擎的客户端具有 C/C++ 扩展模块，并需要额外的构建环境。
-默认情况下，本地构建的客户端库不包含对图学习引擎的支持。如果需要构建包含图学习引擎的 Python 包，请参阅 [构建 Python Wheels](https://graphscope.io/docs/developer_guide.html#build-python-wheels).
 
 ### 测试
 
-为了验证您所开发功能的正确性，您所做的代码更改应通过我们的测试。通过以下脚本执行测试流程。
-
-```bash
-make test
-```
-
-
+为了验证您所开
 
 ## 文档
 [GitHub Action + ACK：云原生 DevOps 落地利器
