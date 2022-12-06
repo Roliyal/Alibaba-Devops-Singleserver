@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: nginx-deployment
-  replicas: 2 # 告知 Deployment 运行 2 个与该模板匹配的 Pod
+  replicas: 2 
   template:
     metadata:
       labels:
